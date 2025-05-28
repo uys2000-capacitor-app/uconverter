@@ -1,0 +1,1 @@
+yarn capacitor-assets generate

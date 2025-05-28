@@ -9,8 +9,12 @@
 <script lang="ts">
 import { Transition } from 'vue';
 import { RouterView } from 'vue-router'
+import { hideSplashScreen } from './services/capacitor/splashScreen';
 
 export default {
-  components: { RouterView, Transition }
+  components: { RouterView, Transition },
+  mounted() {
+    hideSplashScreen()
+  }
 }
 </script>
