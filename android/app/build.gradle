@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.uys2000.uapp"
+    namespace "com.uys2000.uconverter"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.uys2000.uapp"
+        applicationId "com.uys2000.uconverter"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

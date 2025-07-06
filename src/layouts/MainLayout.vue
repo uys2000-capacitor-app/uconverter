@@ -1,15 +1,13 @@
 <template>
-  <div class="drawer">
-    <input id="drawer" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content flex flex-col">
-      <TheHeader />
+  <div id="layout">
+    <TheHeader />
+    <div id="layout-content">
       <RouterView v-slot="{ Component }">
         <Transition name="layout">
           <component :is="Component" />
         </Transition>
       </RouterView>
     </div>
-    <TheDrawer />
   </div>
 </template>
 
@@ -21,7 +19,26 @@ export default {
   components: {
     RouterView, Transition,
     TheHeader: defineAsyncComponent(() => import('@/components/shared/TheHeader.vue')),
-    TheDrawer: defineAsyncComponent(() => import('@/components/shared/TheDrawer.vue'))
   }
 }
 </script>
+
+<style scoped>
+@reference "@/assets/main.css";
+
+#layout,
+#layout-content {
+  @apply flex flex-col;
+  @apply overflow-hidden;
+}
+
+#layout {
+  @apply h-screen w-screen;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+#layout-content {
+  @apply h-full min-w-full;
+}
+</style>

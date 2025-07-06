@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli'
 
 const config: CapacitorConfig = {
-  appId: 'com.uys2000.uapp',
-  appName: 'UApp',
+  appId: 'com.uys2000.uconverter',
+  appName: 'UConverter',
   webDir: 'dist',
   plugins: {
     CapacitorHttp: {
