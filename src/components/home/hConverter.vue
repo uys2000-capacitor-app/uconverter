@@ -32,7 +32,12 @@
     </div>
 
     <div class="download-wrapper" v-if="url">
-      <a :href="url" :download="name">{{ content.downloadFile }}</a>
+      <template v-if="isNative">
+        <a @click="writeFile">{{ content.downloadFile }}</a>
+      </template>
+      <template v-else>
+        <a :href="url" :download="name" target="_blank">{{ content.downloadFile }}</a>
+      </template>
       <button onclick="logs.showModal()">{{ content.logsButton }}</button>
     </div>
     <DModal id="logs">
@@ -44,7 +49,10 @@
 </template>
 
 <script lang="ts">
-import { convert } from "@/services/app/converter";
+import { convert, uint8ToBase64 } from "@/services/app/converter";
+import { isNativePlatform } from "@/services/capacitor/core";
+import { getPathInfo, writeFile } from "@/services/capacitor/fileSystem";
+import { share } from "@/services/capacitor/share";
 import { useLanguageStore } from "@/stores/language";
 import type { UFile } from "@/types/converter";
 import { defineAsyncComponent } from "vue";
@@ -66,6 +74,8 @@ export default {
           "png", "jpg", "jpeg", "webp", "bmp", "tiff", "gif", "ppm", "pgm", "pbm"
         ]
       },
+      blob: null as Blob | null,
+      data: null as Uint8Array<ArrayBufferLike> | null,
       languageStore: useLanguageStore(),
       logs: [] as string[],
       onPrgress: false,
@@ -87,6 +97,9 @@ export default {
       if (this.formats.image.includes(this.ufile.extension))
         return this.formats.image;
       return [];
+    },
+    isNative() {
+      return isNativePlatform()
     }
   },
   methods: {
@@ -111,8 +124,10 @@ export default {
       this.onPrgress = true;
       this.resetOldConvert()
       try {
-        const { url, name, logs } = await convert(this.ufile)
+        const { blob, data, url, name, logs } = await convert(this.ufile)
         if (url) {
+          if (blob) this.blob = blob
+          if (data) this.data = data
           this.url = url
           this.name = name
           this.logs = logs
@@ -123,6 +138,13 @@ export default {
       }
       this.onPrgress = false
     },
+    async writeFile() {
+      if (this.blob && this.data) {
+        await writeFile(this.name, uint8ToBase64.uLog(this.data))
+        const path = await getPathInfo(this.name)
+        share("", path.uri)
+      }
+    }
   }
 }
 

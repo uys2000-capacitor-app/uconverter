@@ -4,4 +4,5 @@
     <string name="title_activity_main">UCoverter</string>
     <string name="package_name">com.uys2000.uconverter</string>
     <string name="custom_url_scheme">com.uys2000.uconverter</string>
+    <string name="admob_app_id">ca-app-pub-6530204715466484~4953388593</string>
 </resources>

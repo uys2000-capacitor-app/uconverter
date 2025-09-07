@@ -275,6 +275,13 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
+"@capacitor-community/admob@6":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@capacitor-community/admob/-/admob-6.2.0.tgz#b092c7c60afa1322be39738930ebd5030459ab52"
+  integrity sha512-Po+FXAs4XW2LOegEo1pBssXVjblzt2LeyCiQML9Ep/GnDZooI+ZTIpnB1yU6W3dVW8iO2FENkfWM+oE8O+fNSA==
+  dependencies:
+    "@capacitor/core" "^6.0.0"
+
 "@capacitor/android@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-7.2.0.tgz#f30e313315ab92c500bd57d9f0c4716a46b42f40"
@@ -344,6 +351,13 @@
     tslib "^2.8.1"
     xml2js "^0.6.2"
 
+"@capacitor/core@^6.0.0":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-6.2.1.tgz#7f1cbf438e55d3c32940eac26abd307c19f8bdee"
+  integrity sha512-urZwxa7hVE/BnA18oCFAdizXPse6fCKanQyEqpmz6cBJ2vObwMpyJDG5jBeoSsgocS9+Ax+9vb4ducWJn0y2qQ==
+  dependencies:
+    tslib "^2.1.0"
+
 "@capacitor/core@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-7.2.0.tgz#fdd1c5d2fbfa257887ce6065f66151a51f0e6d1b"
@@ -356,15 +370,39 @@
   resolved "https://registry.yarnpkg.com/@capacitor/device/-/device-7.0.1.tgz#d7aa792c1025c45855998691b4b4c4f4b3acbceb"
   integrity sha512-ImjR2LmCEhbckYtOHXTfi5v6B7d4HPX9uKIAQs7wzzmE+yRRXuUTEzARBQ00dZDInAInkbuyQRdjwPTSHZUpnw==
 
+"@capacitor/file-transfer@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@capacitor/file-transfer/-/file-transfer-1.0.5.tgz#81640a0b4cc1f71598232427ca6e4c08fc6bd290"
+  integrity sha512-cWBTAEvihHeQCebJSLGpRZmZC7Grq19nO3uvNzF6eVcaxyESYSo1CqyFpp31PNWPbt65eh9502ryyWZ7hdxucg==
+  dependencies:
+    "@capacitor/synapse" "^1.0.3"
+
+"@capacitor/filesystem@^7.1.4":
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/@capacitor/filesystem/-/filesystem-7.1.4.tgz#b728831f15af00d7d5c0779c683da142cba3b366"
+  integrity sha512-BdUnOVulHAtruW2GeC9o7e9LO5aFcVYqNn3dLypJSOck/WipUFNfI0QWoUS0FVGeqBbDJgFGi3zjXJx0lzbDkA==
+  dependencies:
+    "@capacitor/synapse" "^1.0.3"
+
 "@capacitor/preferences@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@capacitor/preferences/-/preferences-7.0.1.tgz#d1791a94fba8018497839fb7bd0bfa8b636dad6d"
   integrity sha512-XF9jOHzvoIBZLwZr/EX6aVaUO1d8Mx7TwBLQS33pYHOliCW5knT5KUkFOXNNYxh9qqODYesee9xuQIKNJpQBag==
 
+"@capacitor/share@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/share/-/share-7.0.2.tgz#74aab38dde1eae6d6889b71f1d09c02fe358da47"
+  integrity sha512-VyNPo/9831xnL17IMDeft5yNdBjoKNb451P95sRcr69hulRDqHc+kndqOVaMXnaA6IyBdWnnFv/n1HUf4cXpGw==
+
 "@capacitor/splash-screen@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@capacitor/splash-screen/-/splash-screen-7.0.1.tgz#ea70d39c4346db4558f749eeb2d3ac2f5c34c550"
   integrity sha512-Nbqw9bEIe7uHj/HOT81mf4jT6uK1YykozpQw/uIKQDueMg6RJYaJK2/TMajIOohLk8fJF4TYIc1i9nGjNLnfGg==
+
+"@capacitor/synapse@^1.0.3":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@capacitor/synapse/-/synapse-1.0.4.tgz#c6beb33119d9656b1f04cb7783989fb78933ef6d"
+  integrity sha512-/C1FUo8/OkKuAT4nCIu/34ny9siNHr9qtFezu4kxm6GY1wNFxrCFWjfYx5C1tUhVGz3fxBABegupkpjXvjCHrw==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
@@ -1271,6 +1309,11 @@
   dependencies:
     "@typescript-eslint/types" "8.29.0"
     eslint-visitor-keys "^4.2.0"
+
+"@uys2000/u-logger@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@uys2000/u-logger/-/u-logger-2.0.1.tgz#9e4091658df61cf3780ba16aea23ad78d4036da1"
+  integrity sha512-UXkNIBkCAldIZT/Or96moyIsc3pe62jR7sQ9HBhprj4X2g4X3BGG+QEE5SwLjNEJ8Y/DctIQCcZ3cSkPxBMAtA==
 
 "@vitejs/plugin-vue@^5.2.3":
   version "5.2.3"

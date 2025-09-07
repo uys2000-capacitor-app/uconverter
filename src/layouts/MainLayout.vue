@@ -1,5 +1,5 @@
 <template>
-  <div id="layout">
+  <div id="layout" :class="{ ad: appStore.adMobLoaded }">
     <TheHeader />
     <div id="layout-content">
       <RouterView v-slot="{ Component }">
@@ -12,6 +12,7 @@
 </template>
 
 <script lang="ts">
+import { useAppStore } from '@/stores/app';
 import { defineAsyncComponent, Transition } from 'vue';
 import { RouterView } from 'vue-router'
 
@@ -19,6 +20,11 @@ export default {
   components: {
     RouterView, Transition,
     TheHeader: defineAsyncComponent(() => import('@/components/shared/TheHeader.vue')),
+  },
+  data() {
+    return {
+      appStore: useAppStore()
+    }
   }
 }
 </script>
@@ -36,6 +42,10 @@ export default {
   @apply h-screen w-screen;
   height: 100dvh;
   width: 100dvw;
+}
+
+#layout.ad {
+  @apply pb-12;
 }
 
 #layout-content {
